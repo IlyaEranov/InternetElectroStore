@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glance - Корзина</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-speaker logo-icon"></i>
+                <span class="logo-text">Glance</span>
+            </div>
+            <nav class="center-nav">
+                <a href="store.html" class="nav-link active">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="icon-link">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+     <main class="main-content">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumb-link">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-link">Каталог</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-link">Смартфоны</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-link">Apple</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">iPhone 14 Pro 256GB</span>
+        </div>
+        
+        <div class="product-container">
+            <!-- Левая часть - галерея -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <div class="image-placeholder" id="mainImage">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail active" data-image="black">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="thumbnail" data-image="silver">
+                        <i class="fas fa-mobile-alt" style="color: #e0e0e0;"></i>
+                    </div>
+                    <div class="thumbnail" data-image="gold">
+                        <i class="fas fa-mobile-alt" style="color: #ffd700;"></i>
+                    </div>
+                    <div class="thumbnail" data-image="purple">
+                        <i class="fas fa-mobile-alt" style="color: #9b59b6;"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Правая часть - информация -->
+            <div class="product-info">
+                <div class="product-header">
+                    <div class="product-category">Смартфоны • Apple</div>
+                    <h1 class="product-title">Смартфон Apple iPhone 14 Pro 256GB</h1>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-value">4.7</span>
+                        <span class="rating-count">(247 отзывов)</span>
+                    </div>
+                    <div class="product-id">Артикул: APL-IP14P-256</div>
+                </div>
+                
+                <!-- Блок цены -->
+                <div class="price-block">
+                    <div class="price-row">
+                        <div class="current-price" id="currentPrice">119 999 ₽</div>
+                        <div class="old-price" id="oldPrice">129 999 ₽</div>
+                        <div class="discount-badge" id="discountBadge">-8%</div>
+                    </div>
+                    <div class="price-savings" id="priceSavings">Экономия 10 000 ₽</div>
+                    <div class="credit-info">
+                        <i class="fas fa-credit-card"></i> 
+                        <strong>9 999 ₽/мес</strong> - рассрочка на 12 месяцев
+                    </div>
+                </div>
+                
+                <!-- Выбор характеристик -->
+                <div class="specs-selection">
+                    <h3 class="specs-title">Выберите конфигурацию</h3>
+                    
+                    <div class="specs-options">
+                        <div class="spec-option">
+                            <div class="spec-label">Цвет</div>
+                            <div class="spec-buttons" id="colorButtons">
+                                <button class="spec-btn active" data-color="black" data-price="119999">
+                                    Черный <span class="spec-price">119 999 ₽</span>
+                                </button>
+                                <button class="spec-btn" data-color="silver" data-price="122999">
+                                    Серебристый <span class="spec-price">122 999 ₽</span>
+                                </button>
+                                <button class="spec-btn" data-color="gold" data-price="124999">
+                                    Золотой <span class="spec-price">124 999 ₽</span>
+                                </button>
+                                <button class="spec-btn" data-color="purple" data-price="119999">
+                                    Фиолетовый <span class="spec-price">119 999 ₽</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-option">
+                            <div class="spec-label">Объем памяти</div>
+                            <div class="spec-buttons" id="memoryButtons">
+                                <button class="spec-btn" data-memory="128" data-price="109999">
+                                    128 ГБ <span class="spec-price">109 999 ₽</span>
+                                </button>
+                                <button class="spec-btn active" data-memory="256" data-price="119999">
+                                    256 ГБ <span class="spec-price">119 999 ₽</span>
+                                </button>
+                                <button class="spec-btn" data-memory="512" data-price="134999">
+                                    512 ГБ <span class="spec-price">134 999 ₽</span>
+                                </button>
+                                <button class="spec-btn" data-memory="1024" data-price="149999">
+                                    1 ТБ <span class="spec-price">149 999 ₽</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок покупки -->
+                <div class="purchase-block">
+                    <div class="quantity-selector">
+                        <div class="quantity-label">Количество:</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" id="decreaseQty">-</button>
+                            <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="10">
+                            <button class="quantity-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="purchase-buttons">
+                        <button class="purchase-btn add-to-cart" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Добавить в корзину
+                        </button>
+                        <button class="purchase-btn buy-now" id="buyNowBtn">
+                            <i class="fas fa-bolt"></i> Купить сейчас
+                        </button>
+                        <button class="wishlist-btn" id="wishlistBtn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Блок доставки -->
+                <div class="delivery-block">
+                    <div class="delivery-info">
+                        <div class="delivery-item">
+                            <i class="fas fa-shipping-fast delivery-icon"></i>
+                            <div class="delivery-text">
+                                <h4>Бесплатная доставка</h4>
+                                <p>При заказе от 10 000 ₽. По Москве — 1-2 дня, по России — 3-7 дней</p>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-item">
+                            <i class="fas fa-shield-alt delivery-icon"></i>
+                            <div class="delivery-text">
+                                <h4>Гарантия 2 года</h4>
+                                <p>Официальная гарантия от Apple. Сервисные центры по всей России</p>
+                            </div>
+                        </div>
+                        
+                        <div class="delivery-item">
+                            <i class="fas fa-exchange-alt delivery-icon"></i>
+                            <div class="delivery-text">
+                                <h4>Возврат 30 дней</h4>
+                                <p>Возврат товара в течение 30 дней с момента покупки при наличии чека</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Табы с описанием -->
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Описание</button>
+                <button class="tab-btn" data-tab="specifications">Характеристики</button>
+                <button class="tab-btn" data-tab="reviews">Отзывы (247)</button>
+            </div>
+            
+            <!-- Описание товара -->
+            <div class="tab-content active" id="descriptionTab">
+                <div class="description-content">
+                    <h2 class="description-title">iPhone 14 Pro: революционная камера и дисплей</h2>
+                    
+                    <p class="description-text">
+                        Представляем iPhone 14 Pro с инновационной камерой 48 Мп, 
+                        обеспечивающей невероятное качество фотографий. Динамический остров — 
+                        это новый интерактивный способ получения уведомлений и взаимодействия с ними. 
+                        Безрамочный дисплей Super Retina XDR теперь еще ярче на улице.
+                    </p>
+                    
+                    <p class="description-text">
+                        Оснащенный самым мощным чипом для смартфонов — A16 Bionic, 
+                        iPhone 14 Pro обеспечивает исключительную производительность и 
+                        эффективность использования энергии. Новая система камер Pro 
+                        позволяет снимать фото с невероятной детализацией.
+                    </p>
+                    
+                    <h3 class="description-title" style="font-size: 18px; margin-top: 25px;">Ключевые особенности</h3>
+                    
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Динамический остров — новый способ взаимодействия с iPhone</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Основная камера 48 Мп с улучшенным качеством в условиях низкой освещенности</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Всегда включенный дисплей и функция экстренной помощи via satellite</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Чип A16 Bionic — самый быстрый процессор для смартфонов</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Технология Dynamic Island для уведомлений и интерактивных элементов</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Повышенная прочность с керамическим щитком и хирургической нержавеющей сталью</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Длительное время автономной работы до 23 часов воспроизведения видео</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Запись видео в формате Cinematic mode в 4K HDR при 24 кадрах в секунду</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Характеристики товара -->
+            <div class="tab-content" id="specificationsTab">
+                <div class="specs-content">
+                    <h2 class="description-title">Технические характеристики</h2>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <td>Экран</td>
+                            <td>6.1" Super Retina XDR, Always-On, 2556x1179 пикселей</td>
+                        </tr>
+                        <tr>
+                            <td>Процессор</td>
+                            <td>Apple A16 Bionic (4 нм)</td>
+                        </tr>
+                        <tr>
+                            <td>Память</td>
+                            <td>6 ГБ ОЗУ, 256 ГБ встроенной памяти</td>
+                        </tr>
+                        <tr>
+                            <td>Основная камера</td>
+                            <td>48 Мп (широкоугольная) + 12 Мп (ультраширокоугольная) + 12 Мп (телефото)</td>
+                        </tr>
+                        <tr>
+                            <td>Фронтальная камера</td>
+                            <td>12 Мп с автофокусом</td>
+                        </tr>
+                        <tr>
+                            <td>Видеосъемка</td>
+                            <td>4K@60fps, 1080p@240fps, HDR, Dolby Vision</td>
+                        </tr>
+                        <tr>
+                            <td>Аккумулятор</td>
+                            <td>3200 мАч, до 23 часов видео, беспроводная зарядка</td>
+                        </tr>
+                        <tr>
+                            <td>Операционная система</td>
+                            <td>iOS 16 (обновляется до iOS 17)</td>
+                        </tr>
+                        <tr>
+                            <td>Защита</td>
+                            <td>IP68 (водонепроницаемость до 6 метров в течение 30 минут)</td>
+                        </tr>
+                        <tr>
+                            <td>Связь</td>
+                            <td>5G, Wi-Fi 6, Bluetooth 5.3, NFC, GPS</td>
+                        </tr>
+                        <tr>
+                            <td>Материалы</td>
+                            <td>Хирургическая нержавеющая сталь, керамический щиток</td>
+                        </tr>
+                        <tr>
+                            <td>Габариты</td>
+                            <td>147.5 x 71.5 x 7.9 мм, 206 г</td>
+                        </tr>
+                        <tr>
+                            <td>Цвета</td>
+                            <td>Черный, серебристый, золотой, фиолетовый</td>
+                        </tr>
+                        <tr>
+                            <td>Комплектация</td>
+                            <td>iPhone, кабель USB-C/Lightning, документация</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Отзывы -->
+            <div class="tab-content" id="reviewsTab">
+                <div class="reviews-content">
+                    <div class="reviews-header">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="rating-big">4.7</div>
+                                <div class="stars-big">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="total-reviews">247 отзывов</div>
+                            </div>
+                        </div>
+                        <button class="add-review-btn" id="addReviewBtn">
+                            <i class="fas fa-pen"></i> Написать отзыв
+                        </button>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="author-avatar">МП</div>
+                                    <div>
+                                        <div class="author-name">Михаил Петров</div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-date">2 недели назад</div>
+                            </div>
+                            <div class="review-text">
+                                Отличный телефон! Камера просто невероятная, снимки получаются как с профессиональной 
+                                камеры. Динамический остров — очень удобная фича, к которой быстро привыкаешь. 
+                                Батареи хватает на полный день активного использования. Рекомендую!
+                            </div>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="author-avatar">АИ</div>
+                                    <div>
+                                        <div class="author-name">Анна Иванова</div>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-date">1 месяц назад</div>
+                            </div>
+                            <div class="review-text">
+                                Покупала как подарок мужу. Он в восторге! Особенно нравится функция Always-On дисплея 
+                                и качество сборки. Телефон очень быстрый, все приложения летают. Единственный минус — 
+                                быстро садится батарея при активном использовании камеры, но это ожидаемо для таких мощных функций.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Похожие товары -->
+        <div class="related-products">
+            <h2 class="section-title">Похожие товары</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-card-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="product-card-title">Смартфон Apple iPhone 14 128GB</div>
+                    <div class="product-card-price">84 999 ₽</div>
+                    <button class="product-card-btn">В корзину</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-card-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="product-card-title">Смартфон Samsung Galaxy S23 Ultra</div>
+                    <div class="product-card-price">99 999 ₽</div>
+                    <button class="product-card-btn">В корзину</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-card-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="product-card-title">Смартфон Google Pixel 7 Pro</div>
+                    <div class="product-card-price">79 999 ₽</div>
+                    <button class="product-card-btn">В корзину</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-card-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="product-card-title">Смартфон Apple iPhone 13 Pro</div>
+                    <div class="product-card-price">94 999 ₽</div>
+                    <button class="product-card-btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Уведомление -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Товар добавлен в корзину!</span>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Популярное</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt contact-icon"></i>Москва, ул. Технологическая, 12</p>
+                    <p><i class="fas fa-phone contact-icon"></i>+7 (800) 555-35-35</p>
+                    <p><i class="fas fa-phone contact-icon"></i>info@glance.ru</p>
+                    <p><i class="fas fa-clock contact-icon"></i>Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                </div>
+                <div class="footer-section footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе новых акций и предложений</p>
+                    <input type="email" placeholder="Ваш email">
+                    <button>Подписаться</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Glance. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/index.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+</html>

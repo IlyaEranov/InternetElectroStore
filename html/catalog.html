@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glance - Каталог</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/catalog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="store.html" class="logo">
+                <i class="fas fa-speaker logo-icon"></i>
+                <span class="logo-text">Glance</span>
+            </a>
+            <nav class="center-nav">
+                <a href="store.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link active">Каталог</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a class="nav-link" id="contacts-link">Контакты</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="icon-link" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 class="search-modal-title">Поиск товаров</h2>
+                <button class="close-search" id="closeSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div> 
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput" placeholder="Введите название товара, бренд или категорию..." autocomplete="off">
+                <button type="submit" class="search-button">Искать</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <div class="no-results" id="noResults">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <p>Введите запрос для поиска товаров</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main-content">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumb-link">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-link">Каталог</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Смартфоны</span>
+        </div>
+        
+        <!-- Заголовок страницы -->
+        <div class="page-header">
+            <h1 class="page-title">Смартфоны</h1>
+            <p class="page-subtitle">Лучшие модели от ведущих брендов</p>
+        </div>
+        
+        <!-- Кнопка фильтров для мобильных -->
+        <button class="mobile-filters-btn" id="mobileFiltersBtn">
+            <i class="fas fa-filter"></i>
+            Фильтры и сортировка
+        </button>
+        
+        <!-- Основной контейнер -->
+        <div class="page-container">
+            <!-- Боковая панель с фильтрами -->
+            <aside class="filters-sidebar" id="filtersSidebar">
+                <div class="filters-panel">
+                    <h2 class="filters-title">Фильтры</h2>
+                    
+                    <!-- Фильтр по бренду -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Бренд</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-apple" checked>
+                                <label for="brand-apple">Apple</label>
+                                <span class="filter-option-count">(4)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-samsung" checked>
+                                <label for="brand-samsung">Samsung</label>
+                                <span class="filter-option-count">(1)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-huawei" checked>
+                                <label for="brand-huawei">HUAWEI</label>
+                                <span class="filter-option-count">(2)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-xiaomi" checked>
+                                <label for="brand-xiaomi">Xiaomi</label>
+                                <span class="filter-option-count">(1)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Фильтр по цене -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Цена, ₽</h3>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <input type="number" class="price-input" id="price-min" placeholder="10 000" min="0" max="200000" value="10000">
+                                <span class="price-separator">-</span>
+                                <input type="number" class="price-input" id="price-max" placeholder="120 000" min="0" max="200000" value="120000">
+                            </div>
+                            <div class="price-slider" id="priceSlider">
+                                <div class="price-slider-fill" id="priceSliderFill"></div>
+                                <div class="price-slider-handle" id="priceSliderMin"></div>
+                                <div class="price-slider-handle" id="priceSliderMax"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Фильтр по памяти -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Объем памяти</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="memory-64">
+                                <label for="memory-64">64 ГБ</label>
+                                <span class="filter-option-count">(1)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="memory-128" checked>
+                                <label for="memory-128">128 ГБ</label>
+                                <span class="filter-option-count">(6)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="memory-256">
+                                <label for="memory-256">256 ГБ</label>
+                                <span class="filter-option-count">(0)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Фильтр по операционной системе -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Операционная система</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="os-ios" checked>
+                                <label for="os-ios">iOS</label>
+                                <span class="filter-option-count">(4)</span>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="os-android" checked>
+                                <label for="os-android">Android</label>
+                                <span class="filter-option-count">(4)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="apply-filters" id="applyFilters">Применить фильтры</button>
+                </div>
+            </aside>
+            
+            <!-- Основная область с товарами -->
+            <div class="products-main">
+                <!-- Панель сортировки и просмотра -->
+                <div class="products-toolbar">
+                    <div class="products-count">
+                        Найдено: <span id="productsCount">8</span> товаров
+                    </div>
+                    
+                    <div class="sort-options">
+                        <span class="sort-label">Сортировка:</span>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="popular">По популярности</option>
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                            <option value="name">По названию</option>
+                        </select>
+                    </div>
+                    
+                    <div class="view-options">
+                        <button class="view-btn active" id="viewGrid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" id="viewList">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Сетка товаров -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Смартфон 1 -->
+                    <div class="product-card" data-brand="apple" data-price="84999" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Apple</div>
+                        <div class="product-name">Смартфон Apple iPhone 14 128GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">iOS</span>
+                            <span class="product-spec">6.1"</span>
+                        </div>
+                        <div class="product-price">84 999 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 2 -->
+                    <div class="product-card" data-brand="apple" data-price="75919" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Apple</div>
+                        <div class="product-name">Смартфон Apple iPhone 13 128GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">iOS</span>
+                            <span class="product-spec">6.1"</span>
+                        </div>
+                        <div class="product-price">75 919 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 3 -->
+                    <div class="product-card" data-brand="apple" data-price="42900" data-memory="64">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Apple</div>
+                        <div class="product-name">Смартфон Apple iPhone 12 64GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">64 ГБ</span>
+                            <span class="product-spec">iOS</span>
+                            <span class="product-spec">6.1"</span>
+                        </div>
+                        <div class="product-price">42 900 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 4 -->
+                    <div class="product-card" data-brand="huawei" data-price="11999" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">HUAWEI</div>
+                        <div class="product-name">Смартфон HUAWEI nova Y01</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">Android</span>
+                            <span class="product-spec">6.5"</span>
+                        </div>
+                        <div class="product-price">11 999 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 5 -->
+                    <div class="product-card" data-brand="huawei" data-price="36999" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">HUAWEI</div>
+                        <div class="product-name">Смартфон HUAWEI nova 11</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">Android</span>
+                            <span class="product-spec">6.7"</span>
+                        </div>
+                        <div class="product-price">36 999 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 6 -->
+                    <div class="product-card" data-brand="xiaomi" data-price="16958" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Xiaomi</div>
+                        <div class="product-name">Смартфон Xiaomi Redmi Note 130GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">Android</span>
+                            <span class="product-spec">6.6"</span>
+                        </div>
+                        <div class="product-price">16 958 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 7 -->
+                    <div class="product-card" data-brand="apple" data-price="119969" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Apple</div>
+                        <div class="product-name">Смартфон Apple iPhone 14 Pro 129GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">iOS</span>
+                            <span class="product-spec">6.1"</span>
+                        </div>
+                        <div class="product-price">119 969 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Смартфон 8 -->
+                    <div class="product-card" data-brand="samsung" data-price="18958" data-memory="128">
+                        <div class="product-image">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="product-brand">Samsung</div>
+                        <div class="product-name">Смартфон Samsung Galaxy A21 128GB</div>
+                        <div class="product-specs">
+                            <span class="product-spec">128 ГБ</span>
+                            <span class="product-spec">Android</span>
+                            <span class="product-spec">6.5"</span>
+                        </div>
+                        <div class="product-price">18 958 ₽</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">В корзину</button>
+                            <button class="recalculate-btn">Пересчет</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Пагинация -->
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">8</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Популярное</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt contact-icon"></i>Москва, ул. Технологическая, 12</p>
+                    <p><i class="fas fa-phone contact-icon"></i>+7 (800) 555-35-35</p>
+                    <p><i class="fas fa-phone contact-icon"></i>info@glance.ru</p>
+                    <p><i class="fas fa-clock contact-icon"></i>Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                </div>
+                <div class="footer-section footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе новых акций и предложений</p>
+                    <input type="email" placeholder="Ваш email">
+                    <button>Подписаться</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Glance. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/index.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/catalog.js"></script>
+</body>
+</html>

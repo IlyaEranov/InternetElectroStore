@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glance - Товар</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-speaker logo-icon"></i>
+                <span class="logo-text">Glance</span>
+            </div>
+            <nav class="center-nav">
+                <a href="store.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="about.html" class="nav-link active">О нас</a>
+                <a class="nav-link" id="contacts-link">Контакты</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="icon-link" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2 class="search-modal-title">Поиск товаров</h2>
+                <button class="close-search" id="closeSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Введите название товара, бренд или категорию..." autocomplete="off">
+                <button type="submit" class="search-button">Искать</button>
+            </form>
+            <div class="search-results" id="searchResults">
+                <div class="no-results" id="noResults">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <p>Введите запрос для поиска товаров</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main-content">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumb-link">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">О нас</span>
+        </div>
+
+        <!-- Заголовок страницы -->
+        <div class="page-header">
+            <h1 class="page-title">О компании "Умная колонка"</h1>
+            <p class="page-subtitle">
+                Ведущий онлайн-магазин электроники в России, где технологии встречаются с инновациями
+            </p>
+        </div>
+
+        <!-- О компании -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-store"></i> Наша история
+            </h2>
+
+            <div class="about-intro">
+                <div class="about-text">
+                    <p>
+                        "Умная колонка" была основана в 2015 году группой энтузиастов,
+                        которые верили, что современные технологии должны быть доступны каждому.
+                        Начиная как небольшой интернет-магазин смартфонов, мы выросли в одного из
+                        лидеров рынка электроники в России.
+                    </p>
+                    <p>
+                        Сегодня мы предлагаем широкий ассортимент товаров: от смартфонов и ноутбуков
+                        до умной домашней техники и гаджетов. Наша миссия — делать передовые технологии
+                        простыми, доступными и полезными для повседневной жизни.
+                    </p>
+                    <p>
+                        Мы сотрудничаем с ведущими мировыми брендами, такими как Apple, Samsung,
+                        Huawei, Xiaomi и другими, чтобы предложить нашим клиентам только лучшее оборудование.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Наши ценности -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-heart"></i> Наши ценности
+            </h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Клиент на первом месте</h3>
+                    <p class="value-description">
+                        Мы ставим интересы клиентов выше всего. Каждое решение принимается
+                        с мыслью о том, как оно улучшит ваш опыт покупок.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="value-title">Качество и надежность</h3>
+                    <p class="value-description">
+                        Мы тщательно отбираем каждый товар и работаем только с проверенными
+                        поставщиками. Гарантия на все товары — наше обязательство перед вами.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Инновации</h3>
+                    <p class="value-description">
+                        Мы следим за технологическими трендами и всегда в числе первых
+                        предлагаем новейшие гаджеты и решения на российском рынке.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Честность и прозрачность</h3>
+                    <p class="value-description">
+                        Четкие условия, понятные цены, отзывчивая поддержка. Мы строим
+                        долгосрочные отношения с клиентами на основе доверия.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Цифры и достижения -->
+        <section class="stats-section">
+            <h2 class="stats-title">Мы в цифрах</h2>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Лет на рынке</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Товаров в каталоге</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Брендов-партнеров</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Поддержка клиентов</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Городов доставки</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Наша команда -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-users-cog"></i> Наша команда
+            </h2>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="member-placeholder">АИ</div>
+                    </div>
+                    <h3 class="member-name">Анна Иванова</h3>
+                    <p class="member-position">CEO, Основатель</p>
+                    <p class="member-description">
+                        Технологический энтузиаст с 15-летним опытом в ритейле электроники.
+                        Создала "Умную колонку" с нуля.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="member-placeholder">МП</div>
+                    </div>
+                    <h3 class="member-name">Михаил Петров</h3>
+                    <p class="member-position">Технический директор</p>
+                    <p class="member-description">
+                        Отвечает за отбор товаров и техническую экспертизу. Более 12 лет
+                        в индустрии потребительской электроники.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="member-placeholder">ЕС</div>
+                    </div>
+                    <h3 class="member-name">Екатерина Сидорова</h3>
+                    <p class="member-position">Директор по клиентскому сервису</p>
+                    <p class="member-description">
+                        Создала одну из лучших служб поддержки в отрасли. Уверена, что
+                        счастливый клиент — главный приоритет.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="member-placeholder">ДА</div>
+                    </div>
+                    <h3 class="member-name">Дмитрий Алексеев</h3>
+                    <p class="member-position">Руководитель IT-отдела</p>
+                    <p class="member-description">
+                        Разработал уникальную платформу магазина, которая обеспечивает
+                        быструю загрузку и удобную навигацию.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-address-book"></i> Свяжитесь с нами
+            </h2>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Наш офис</h4>
+                        <p>Москва, ул. Технологическая, 12<br>Бизнес-центр "Технопарк"</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Телефон</h4>
+                        <p>+7 (800) 555-35-35<br>Бесплатный звонок по России</p>
+                        <p>Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>info@smart-column.ru — общие вопросы</p>
+                        <p>support@smart-column.ru — техническая поддержка</p>
+                        <p>partners@smart-column.ru — для партнеров</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="action-button">
+                <i class="fas fa-comments"></i> Написать нам сообщение
+            </a>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Популярное</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt contact-icon"></i>Москва, ул. Технологическая, 12</p>
+                    <p><i class="fas fa-phone contact-icon"></i>+7 (800) 555-35-35</p>
+                    <p><i class="fas fa-phone contact-icon"></i>info@glance.ru</p>
+                    <p><i class="fas fa-clock contact-icon"></i>Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                </div>
+                <div class="footer-section footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе новых акций и предложений</p>
+                    <input type="email" placeholder="Ваш email">
+                    <button>Подписаться</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Glance. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/modal.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

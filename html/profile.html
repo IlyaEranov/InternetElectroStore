@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glance - Профиль</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-speaker logo-icon"></i>
+                <span class="logo-text">Glance</span>
+            </div>
+            <nav class="center-nav">
+                <a href="store.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link">Каталог</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="icon-link">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumb-link">Главная</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Личный кабинет</span>
+        </div>
+        
+        <div class="profile-container">
+            <!-- Боковая панель -->
+            <aside class="profile-sidebar">
+                <!-- Карточка профиля -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-image">АИ</div>
+                        <div class="avatar-change" id="changeAvatar">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <h2 class="profile-name">Анна Иванова</h2>
+                    <p class="profile-email">anna.ivanova@mail.ru</p>
+                    <div class="profile-status">VIP клиент</div>
+                    <div class="profile-actions">
+                        <button class="profile-btn" id="editProfileBtn">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Меню профиля -->
+                <div class="sidebar-menu">
+                    <h3 class="menu-title">Меню профиля</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="#" class="menu-link active" id="menuPersonal">
+                                <i class="fas fa-user menu-icon"></i>
+                                <span>Личные данные</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" id="menuOrders">
+                                <i class="fas fa-shopping-bag menu-icon"></i>
+                                <span>Мои заказы</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" id="menuFavorites">
+                                <i class="fas fa-heart menu-icon"></i>
+                                <span>Избранное</span>
+                                <span style="margin-left: auto; color: #ff3b30;">3</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" id="menuBonuses">
+                                <i class="fas fa-gift menu-icon"></i>
+                                <span>Бонусы</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" id="menuSettings">
+                                <i class="fas fa-cog menu-icon"></i>
+                                <span>Настройки</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" id="menuLogout">
+                                <i class="fas fa-sign-out-alt menu-icon"></i>
+                                <span>Выйти</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Основная область профиля -->
+            <div class="profile-main">
+                <!-- Заголовок и кнопки действий -->
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title" id="pageTitle">Личные данные</h1>
+                        <p class="page-subtitle" id="pageSubtitle">Управляйте вашей учетной записью и настройками</p>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="profile-btn">
+                            <i class="fas fa-download"></i> Экспорт данных
+                        </button>
+                        <button class="profile-btn primary">
+                            <i class="fas fa-sync"></i> Обновить
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Секция личных данных -->
+                <div class="profile-section" id="personalSection">
+                    <h2 class="section-title">
+                        <i class="fas fa-id-card"></i> Личная информация
+                    </h2>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">ФИО</span>
+                            <span class="info-value">Иванова Анна Сергеевна</span>
+                            <span class="info-edit" data-field="name">Изменить</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">anna.ivanova@mail.ru</span>
+                            <span class="info-edit" data-field="email">Изменить</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Телефон</span>
+                            <span class="info-value">+7 (999) 123-45-67</span>
+                            <span class="info-edit" data-field="phone">Изменить</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Дата рождения</span>
+                            <span class="info-value">15.03.1990</span>
+                            <span class="info-edit" data-field="birthday">Изменить</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 30px;">
+                        <i class="fas fa-map-marker-alt"></i> Адреса доставки
+                    </h2>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Основной адрес</span>
+                            <span class="info-value">г. Москва, ул. Ленина, д. 25, кв. 78</span>
+                            <span class="info-edit" data-field="address">Изменить</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Дополнительный адрес</span>
+                            <span class="info-value">г. Москва, ул. Пушкина, д. 10, кв. 42</span>
+                            <span class="info-edit" data-field="address2">Изменить</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Секция заказов -->
+                <div class="profile-section" id="ordersSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-history"></i> История заказов
+                    </h2>
+                    
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Заказ #24578</div>
+                                <div class="order-date">15 декабря 2023 • Смартфон Apple iPhone 14, Наушники AirPods Pro</div>
+                                <span class="order-status status-delivered">Доставлен</span>
+                            </div>
+                            <div class="order-amount">112 450 ₽</div>
+                            <div class="order-actions">
+                                <button class="order-btn">Повторить</button>
+                                <button class="order-btn primary">Подробнее</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Заказ #24561</div>
+                                <div class="order-date">5 декабря 2023 • Ноутбук Apple MacBook Air M1</div>
+                                <span class="order-status status-shipped">В пути</span>
+                            </div>
+                            <div class="order-amount">89 999 ₽</div>
+                            <div class="order-actions">
+                                <button class="order-btn">Отследить</button>
+                                <button class="order-btn primary">Подробнее</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Заказ #24512</div>
+                                <div class="order-date">25 ноября 2023 • Умная колонка Яндекс Станция</div>
+                                <span class="order-status status-processing">Обработка</span>
+                            </div>
+                            <div class="order-amount">12 999 ₽</div>
+                            <div class="order-actions">
+                                <button class="order-btn">Отменить</button>
+                                <button class="order-btn primary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Секция избранного -->
+                <div class="profile-section" id="favoritesSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-heart"></i> Избранные товары
+                    </h2>
+                    
+                    <div class="favorites-grid">
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="favorite-name">Смартфон Apple iPhone 15 Pro</div>
+                            <div class="favorite-price">124 999 ₽</div>
+                            <div class="favorite-actions">
+                                <button class="favorite-btn add">В корзину</button>
+                                <button class="favorite-btn remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="favorite-name">Ноутбук Apple MacBook Pro 14"</div>
+                            <div class="favorite-price">199 999 ₽</div>
+                            <div class="favorite-actions">
+                                <button class="favorite-btn add">В корзину</button>
+                                <button class="favorite-btn remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="favorite-name">Наушники Sony WH-1000XM5</div>
+                            <div class="favorite-price">34 999 ₽</div>
+                            <div class="favorite-actions">
+                                <button class="favorite-btn add">В корзину</button>
+                                <button class="favorite-btn remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Секция бонусов -->
+                <div class="profile-section" id="bonusesSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-gift"></i> Мои бонусы
+                    </h2>
+                    
+                    <div class="bonus-card">
+                        <div class="bonus-amount">5 240</div>
+                        <div class="bonus-label">бонусных баллов</div>
+                        <p>1 бонус = 1 ₽. Вы можете оплатить бонусами до 30% от стоимости заказа.</p>
+                        <div class="bonus-info">Следующий уровень: 10 000 баллов (Gold статус)</div>
+                    </div>
+                    
+                    <h3 class="section-title" style="font-size: 18px; margin-top: 30px;">
+                        <i class="fas fa-history"></i> История начислений
+                    </h3>
+                    
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Начисление бонусов</div>
+                                <div class="order-date">15 декабря 2023 • За покупку на сумму 112 450 ₽</div>
+                            </div>
+                            <div class="order-amount" style="color: #34c759;">+1 124</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Начисление бонусов</div>
+                                <div class="order-date">25 ноября 2023 • За покупку на сумму 12 999 ₽</div>
+                            </div>
+                            <div class="order-amount" style="color: #34c759;">+130</div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="order-info">
+                                <div class="order-number">Списание бонусов</div>
+                                <div class="order-date">10 ноября 2023 • Оплата части заказа бонусами</div>
+                            </div>
+                            <div class="order-amount" style="color: #ff3b30;">-500</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Секция настроек -->
+                <div class="profile-section" id="settingsSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-cog"></i> Настройки аккаунта
+                    </h2>
+                    
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Email-уведомления</h4>
+                                <p>Получать уведомления о новых акциях и предложениях</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>SMS-уведомления</h4>
+                                <p>Получать SMS о статусе заказов и акциях</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Двухфакторная аутентификация</h4>
+                                <p>Дополнительная защита вашего аккаунта</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Автоматический вход</h4>
+                                <p>Запомнить меня на этом устройстве</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title" style="font-size: 18px; margin-top: 40px;">
+                        <i class="fas fa-shield-alt"></i> Безопасность
+                    </h3>
+                    
+                    <div class="info-grid" style="margin-top: 20px;">
+                        <div class="info-item">
+                            <span class="info-label">Последний вход</span>
+                            <span class="info-value">Сегодня, 14:30 (г. Москва)</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Активных сессий</span>
+                            <span class="info-value">2 устройства</span>
+                            <span class="info-edit">Управление</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Смена пароля</span>
+                            <span class="info-value">Последняя смена: 3 месяца назад</span>
+                            <span class="info-edit">Изменить пароль</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Популярное</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt contact-icon"></i>Москва, ул. Технологическая, 12</p>
+                    <p><i class="fas fa-phone contact-icon"></i>+7 (800) 555-35-35</p>
+                    <p><i class="fas fa-phone contact-icon"></i>info@glance.ru</p>
+                    <p><i class="fas fa-clock contact-icon"></i>Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-20:00</p>
+                </div>
+                <div class="footer-section footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе новых акций и предложений</p>
+                    <input type="email" placeholder="Ваш email">
+                    <button>Подписаться</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Glance. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/index.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

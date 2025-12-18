@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Glance - Регистрация</title>
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="registration-container">
+            <div class="registration-info">
+                <h1 class="registration-title">Создайте аккаунт в "Glance"</h1>
+                <p class="registration-subtitle">
+                    Присоединяйтесь к сообществу покупателей и получите доступ к персональным скидкам,
+                    отслеживанию заказов и эксклюзивным предложениям.
+                </p>
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Персональные скидки</h4>
+                            <p>Получайте специальные предложения, основанные на ваших предпочтениях и истории покупок.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Быстрая покупка в 1 клик</h4>
+                            <p>Сохраните данные доставки и оплаты для моментального оформления заказов.</p>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>История заказов</h4>
+                            <p>Отслеживайте статус заказов и просматривайте историю всех покупок в личном кабинете.</p>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Бонусная программа</h4>
+                            <p>Копите бонусы за покупки и оплачивайте ими до 30% от стоимости следующих заказов.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "Регистрация на сайте заняла меньше минуты, а благодаря сохраненным данным
+                        я оформляю заказы в два раза быстрее. Особенно нравится система персональных скидок!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АИ</div>
+                        <div class="author-info">
+                            <h5>Анна Иванова</h5>
+                            <p>Клиент с 2022 года</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registration-form-container">
+                <div class="form-card" id="registrationForm">
+                    <h2 class="form-title">Регистрация</h2>
+
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label required">ФИО</label>
+                            <input type="text" id="fullName" class="form-input" placeholder="Иванов Иван Иванович"
+                                required>
+                            <div class="error-message" id="fullNameError">Пожалуйста, введите ваше ФИО</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label required">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="example@mail.ru" required>
+                            <div class="error-message" id="emailError">Пожалуйста, введите корректный email</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label required">Телефон</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                            <div class="error-message" id="phoneError">Пожалуйста, введите корректный номер телефона
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label required">Пароль</label>
+                            <div class="password-toggle">
+                                <input type="password" id="password" class="form-input"
+                                    placeholder="Не менее 8 символов" required>
+                                <button type="button" class="password-toggle-btn" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="passwordError">Пароль должен содержать не менее 8 символов
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label required">Подтверждение пароля</label>
+                            <div class="password-toggle">
+                                <input type="password" id="confirmPassword" class="form-input"
+                                    placeholder="Повторите пароль" required>
+                                <button type="button" class="password-toggle-btn" id="toggleConfirmPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="confirmPasswordError">Пароли не совпадают</div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter">
+                                Получать информацию о новых товарах, акциях и специальных предложениях
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">
+                                Я соглашаюсь с <a href="#">правилами пользования</a> торговой площадкой и
+                                <a href="#">политикой конфиденциальности</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-button" id="submitButton">Зарегистрироваться</button>
+                    </form>
+                    <div class="form-divider">
+                        <span>или войти через</span>
+                    </div>
+                    <div class="social-login">
+                        <button type="button" class="social-button vk-button">
+                            <i class="fab fa-vk social-icon"></i>
+                            <span>Войти через ВКонтакте</span>
+                        </button>
+
+                        <button type="button" class="social-button google-button">
+                            <i class="fab fa-google social-icon"></i>
+                            <span>Войти через Google</span>
+                        </button>
+
+                        <button type="button" class="social-button yandex-button">
+                            <i class="fab fa-yandex social-icon"></i>
+                            <span>Войти через Яндекс</span>
+                        </button>
+                    </div>
+                    <div class="login-link">
+                        Уже есть аккаунт? <a href="#">Войти</a>
+                    </div>
+                </div>
+                <div class="form-card form-success" id="successMessage">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="success-title">Регистрация завершена!</h3>
+                    <p class="success-text">
+                        На ваш email отправлено письмо с подтверждением регистрации.
+                        Теперь вы можете войти в свой аккаунт.
+                    </p>
+                    <button class="submit-button" id="goToLogin">Перейти к входу</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

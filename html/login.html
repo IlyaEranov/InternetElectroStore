@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glance - Вход</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="login-form-container">
+            <div class="form-card" id="loginFormCard">
+                <h2 class="form-title">Вход в аккаунт</h2>
+                <div class="form-message error" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i> Неверный email или пароль. Попробуйте еще раз.
+                </div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label required">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="example@mail.ru">
+                        <div class="error-message" id="emailError">Пожалуйста, введите корректный email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label required">Пароль</label>
+                        <div class="password-toggle">
+                            <input type="password" id="password" class="form-input" placeholder="Введите пароль">
+                            <button type="button" class="password-toggle-btn" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="passwordError">Пожалуйста, введите пароль</div>
+                    </div>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember" checked>
+                            <label for="remember">Запомнить меня</label>
+                        </div>
+                        <a href="#" class="forgot-password" id="forgotPasswordLink">Забыли пароль?</a>
+                    </div>
+                    <button type="submit" class="submit-button" id="loginButton">Войти</button>
+                </form>
+                <div class="form-divider">
+                    <span>или войти через</span>
+                </div>
+                <div class="social-login">
+                    <button type="button" class="social-button vk-button" id="vkLogin">
+                        <i class="fab fa-vk social-icon"></i>
+                        <span>ВКонтакте</span>
+                    </button>
+                    <button type="button" class="social-button google-button" id="googleLogin">
+                        <i class="fab fa-google social-icon"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-button yandex-button" id="yandexLogin">
+                        <i class="fab fa-yandex social-icon"></i>
+                        <span>Яндекс</span>
+                    </button>
+                </div>
+                <div class="register-link">
+                    Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+                </div>
+            </div>
+            <div class="form-card password-recovery" id="passwordRecovery">
+                <a href="#" class="back-to-login" id="backToLogin">
+                    <i class="fas fa-arrow-left"></i> Назад к входу
+                </a>
+                <h2 class="form-title">Восстановление пароля</h2>
+                <p class="login-subtitle" style="text-align: center; margin-bottom: 25px;">
+                    Введите email, указанный при регистрации. Мы отправим вам ссылку для восстановления пароля.
+                </p>
+                <form id="recoveryForm">
+                    <div class="form-group">
+                        <label for="recoveryEmail" class="form-label required">Email</label>
+                        <input type="email" id="recoveryEmail" class="form-input" placeholder="example@mail.ru">
+                        <div class="error-message" id="recoveryEmailError">Пожалуйста, введите корректный email</div>
+                    </div>
+
+                    <button type="submit" class="submit-button" id="recoveryButton">Отправить ссылку</button>
+                </form>
+                <div class="form-message success" id="recoverySuccessMessage">
+                    <i class="fas fa-check-circle"></i> Ссылка для восстановления пароля отправлена на ваш email.
+                </div>
+            </div>
+            <div class="form-card form-success" id="successMessage">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="success-title">Вход выполнен успешно!</h3>
+                <p class="success-text">
+                    Перенаправляем вас в личный кабинет...
+                </p>
+                <button class="submit-button" id="goToAccount">Перейти в личный кабинет</button>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
