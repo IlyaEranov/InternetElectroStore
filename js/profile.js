@@ -219,16 +219,6 @@ function showNotification(message) {
     document.head.appendChild(style);
 }
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelectorAll('.nav-link').forEach(item => {
-            item.classList.remove('active');
-        });
-        this.classList.add('active');
-    });
-});
-
 document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
     alert('Мобильное меню открыто');
 });

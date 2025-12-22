@@ -62,35 +62,25 @@
         </div>
     </div>
     <main class="main-content">
-        <!-- Хлебные крошки -->
         <div class="breadcrumbs">
-            <a href="#" class="breadcrumb-link">Главная</a>
+            <a href="store.html" class="breadcrumb-link">Главная</a>
             <span class="breadcrumb-separator">/</span>
-            <a href="#" class="breadcrumb-link">Каталог</a>
+            <a href="catalog.html" class="breadcrumb-link">Каталог</a>
             <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">Смартфоны</span>
+            <span class="breadcrumb-current" id="breadcrumbCurrent"></span>
         </div>
-        
-        <!-- Заголовок страницы -->
         <div class="page-header">
-            <h1 class="page-title">Смартфоны</h1>
-            <p class="page-subtitle">Лучшие модели от ведущих брендов</p>
+            <h1 class="page-title" id="pageTitle">Каталог</h1>
+            <p class="page-subtitle">Лучшие товары от ведущих брендов</p>
         </div>
-        
-        <!-- Кнопка фильтров для мобильных -->
         <button class="mobile-filters-btn" id="mobileFiltersBtn">
             <i class="fas fa-filter"></i>
             Фильтры и сортировка
         </button>
-        
-        <!-- Основной контейнер -->
         <div class="page-container">
-            <!-- Боковая панель с фильтрами -->
             <aside class="filters-sidebar" id="filtersSidebar">
                 <div class="filters-panel">
                     <h2 class="filters-title">Фильтры</h2>
-                    
-                    <!-- Фильтр по бренду -->
                     <div class="filter-group">
                         <h3 class="filter-group-title">Бренд</h3>
                         <div class="filter-options">
@@ -116,8 +106,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Фильтр по цене -->
                     <div class="filter-group">
                         <h3 class="filter-group-title">Цена, ₽</h3>
                         <div class="price-range">
@@ -133,8 +121,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Фильтр по памяти -->
                     <div class="filter-group">
                         <h3 class="filter-group-title">Объем памяти</h3>
                         <div class="filter-options">
@@ -155,8 +141,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Фильтр по операционной системе -->
                     <div class="filter-group">
                         <h3 class="filter-group-title">Операционная система</h3>
                         <div class="filter-options">
@@ -176,15 +160,11 @@
                     <button class="apply-filters" id="applyFilters">Применить фильтры</button>
                 </div>
             </aside>
-            
-            <!-- Основная область с товарами -->
             <div class="products-main">
-                <!-- Панель сортировки и просмотра -->
                 <div class="products-toolbar">
                     <div class="products-count">
                         Найдено: <span id="productsCount">8</span> товаров
                     </div>
-                    
                     <div class="sort-options">
                         <span class="sort-label">Сортировка:</span>
                         <select class="sort-select" id="sortSelect">
@@ -194,7 +174,6 @@
                             <option value="name">По названию</option>
                         </select>
                     </div>
-                    
                     <div class="view-options">
                         <button class="view-btn active" id="viewGrid">
                             <i class="fas fa-th"></i>
@@ -204,10 +183,7 @@
                         </button>
                     </div>
                 </div>
-                
-                <!-- Сетка товаров -->
                 <div class="products-grid" id="productsGrid">
-                    <!-- Смартфон 1 -->
                     <div class="product-card" data-brand="apple" data-price="84999" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -227,8 +203,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 2 -->
                     <div class="product-card" data-brand="apple" data-price="75919" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -248,8 +222,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 3 -->
                     <div class="product-card" data-brand="apple" data-price="42900" data-memory="64">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -269,8 +241,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 4 -->
                     <div class="product-card" data-brand="huawei" data-price="11999" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -290,8 +260,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 5 -->
                     <div class="product-card" data-brand="huawei" data-price="36999" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -311,8 +279,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 6 -->
                     <div class="product-card" data-brand="xiaomi" data-price="16958" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -332,8 +298,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 7 -->
                     <div class="product-card" data-brand="apple" data-price="119969" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -353,8 +317,6 @@
                             <button class="recalculate-btn">Пересчет</button>
                         </div>
                     </div>
-                    
-                    <!-- Смартфон 8 -->
                     <div class="product-card" data-brand="samsung" data-price="18958" data-memory="128">
                         <div class="product-image">
                             <div class="product-image-placeholder">
@@ -375,8 +337,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Пагинация -->
                 <div class="pagination">
                     <button class="pagination-btn active">1</button>
                     <button class="pagination-btn">2</button>
